@@ -1,0 +1,20 @@
+<project name="checkstyle" default="checkstyle" basedir=".">
+
+
+<!-- CheckStyle Configuration and task. Does not run automatically -->
+<taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties"
+         classpath="checkstyle/checkstyle-8.24-all.jar"/>
+<target name="checkstyle"
+        description="Generates a report of code convention violations.">
+
+  <checkstyle config="checkstyle/A3checks.xml"
+              failureProperty="checkstyle.failure"
+              failOnViolation="false">
+    <fileset dir="src" includes="**/*.java"/>
+  </checkstyle>
+
+
+
+</target>
+
+</project>
